@@ -1,6 +1,11 @@
 #coding=utf-8
 '''
-Created on 2017Äê2ÔÂ15ÈÕ
+Created on 2017ï¿½ï¿½2ï¿½ï¿½15ï¿½ï¿½
 
 @author: zhao
 '''
+def transform(minutes):
+    hour,minute=divmod(minutes,60)
+    return hour,minute
+print transform(720)
+print transform(1403)
