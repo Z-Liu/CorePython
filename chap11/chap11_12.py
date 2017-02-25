@@ -1,6 +1,18 @@
 #coding=utf-8
 '''
-Created on 2017Äê2ÔÂ22ÈÕ
+Created on 2017ï¿½ï¿½2ï¿½ï¿½22ï¿½ï¿½
 
 @author: zhao
 '''
+import time
+def timeit(func,*args,**kwargs):
+    begin_time=time.clock()
+    res=func(*args,**kwargs)
+    end_time=time.clock()
+    return res, end_time-begin_time
+
+def f(a,b=2):
+    return a**b
+
+print timeit(f,2)
+print timeit(f,2,10)
