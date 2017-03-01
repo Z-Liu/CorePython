@@ -4,14 +4,19 @@ Created on 2017��2��15��
 
 @author: zhao
 '''
-from operator import add,sub
+from operator import add,sub,mul,div
 from random import randint,choice
-ops={'+':add,'-':sub}
+ops={'+':add,'-':sub,'*':mul,'/':div}
 MAXTRIES=2
 def doprob():
-    op=choice('+=')
-    nums=[randint(1,10) for i in range(2)]
-    nums.sort(reverse=True)
+    op=choice('+-*/')
+    while True:
+        nums=[randint(1,10) for i in range(2)]
+        nums.sort(reverse=True)
+        if op!='/':
+            break
+        if nums[0]%nums[1]==0:
+            break
     ans=ops[op](*nums)
     pr='%d%s%d='%(nums[0],op,nums[1])
     oops=0
