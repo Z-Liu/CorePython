@@ -1,6 +1,19 @@
 #coding=utf-8
 '''
-Created on 2017Äê3ÔÂ6ÈÕ
+Created on 2017ï¿½ï¿½3ï¿½ï¿½6ï¿½ï¿½
 
 @author: zhao
 '''
+class Database(object):
+    def __init__(self,data="data.txt"):
+        self.data=data
+        self.buffer=[]
+    def add(self,user):
+        if user in open(self.data).readlines() or user in self.buffer:
+            print "already exsits"
+        else:
+            self.buffer.append(user)
+            print "succeed"
+    def __del__(self):
+        with open(self.data,"a") as f:
+            f.writelines(self.buffer)
