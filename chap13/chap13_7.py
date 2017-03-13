@@ -1,10 +1,21 @@
 #coding=utf-8
 '''
-Created on 2017Äê3ÔÂ8ÈÕ
+Created on 2017ï¿½ï¿½3ï¿½ï¿½8ï¿½ï¿½
 
 @author: zhao
 '''
-from time import ctime
+from datetime import datetime
 class Date(object):
-    def __init__(self,dateTime=ctime()):
-        self.dateTime=dateTime
+    def __init__(self,*dateTime):
+        self.dateTime=datetime(dateTime)
+    def update(self,*dateTime):
+        self.dateTime=datetime(dateTime)
+    def display(self,theFormat="default"):
+        formatMap={"MDY":,
+                   "MDYY":,
+                   "DMY":,
+                   "DMYY":,
+                   "MODYY":,
+                   "default":
+                        }
+        dateStr=str((self.dateTime).date())
