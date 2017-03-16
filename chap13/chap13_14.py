@@ -1,6 +1,15 @@
 #coding=utf-8
 '''
-Created on 2017Äê3ÔÂ14ÈÕ
+Created on 2017ï¿½ï¿½3ï¿½ï¿½14ï¿½ï¿½
 
 @author: zhao
 '''
+commands={"ls":"dir","cp":"copy"}
+def runCommand(command):
+    (commands[command])
+while True:
+    command=raw_input("$")
+    runCommand(command)
+    
+    
+        
