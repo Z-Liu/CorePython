@@ -5,25 +5,23 @@ Created on 2017��3��21��
 @author: Administrator
 '''
 class Time60(object):
-#     def __init__(self,*args,**kwargs):
-#         if args==() and kwargs=={}:
-#             self.hr=0
-#             self.min=0
-#         elif len(args)==2:
-#             self.hr=args[0]
-#             self.min=args[1]
-#         elif kwargs!={}:
-#             self.hr=kwargs['hr']
-#             self.min=kwargs['min']
-#         elif isinstance(args[0],dict):
-#             self.hr=args[0]['hr']
-#             self.min=args[0]['min']
-#         elif isinstance(args[0],str):
-#             hourAndMin=args[0].split(":")
-#             self.hr=int(hourAndMin[0])
-#             self.min=int(hourAndMin[1])
-    def __init__(self,hour,min):
-        self.mins=hour*60+min
+    def __init__(self,*args,**kwargs):
+        if args==() and kwargs=={}:
+            self.hr=0
+            self.min=0
+        elif len(args)==2:
+            self.hr=args[0]
+            self.min=args[1]
+        elif kwargs!={}:
+            self.hr=kwargs['hr']
+            self.min=kwargs['min']
+        elif isinstance(args[0],dict):
+            self.hr=args[0]['hr']
+            self.min=args[0]['min']
+        elif isinstance(args[0],str):
+            hourAndMin=args[0].split(":")
+            self.hr=int(hourAndMin[0])
+            self.min=int(hourAndMin[1])
     def __str__(self):
         return '%02d:%02d'%(self.hr,self.min)
     def __add__(self,other):
@@ -44,6 +42,8 @@ class Time60(object):
         return self
     def __repr__(self):
         return "Time60('%02d:%02d')"%(self.hr,self.min)
+    def __int__(self):
+        return self.hr*60+self.min
 
 
 # a = Time60()
